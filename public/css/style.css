@@ -1,0 +1,1115 @@
+/* ==========================================================================
+   ГБПОУ «Грозненский государственный колледж информационных технологий»
+   Официальный кадровый портал «ГГКИТ Карьера ЧР»
+   Финальный файл стилей style.css (Свободное «дышащее» пространство, без иконок в вакансиях)
+   ========================================================================== */
+
+:root {
+  --bg-page: #ffffff;
+  --bg-surface: #ffffff;
+  --bg-tint: #f4faff;
+  --sky-soft: #e3f3fd;
+  --sky-main: #8fd3e8;
+  --blue-main: #1e73b8;
+  --blue-hover: #165a96;
+  --blue-active: #114678;
+
+  --ok-bg: #eef9f2;
+  --ok-border: #86d4a5;
+  --ok-text: #156539;
+
+  --warn-bg: #fff8e6;
+  --warn-border: #f0c36d;
+  --warn-text: #8a5a00;
+
+  --text-primary: #162a3d;
+  --text-secondary: #526b82;
+  --text-inverse: #ffffff;
+
+  --border-base: #d4e7f7;
+  --border-strong: #8fd3e8;
+
+  --radius-xs: 6px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  --shadow-card: 0 3px 14px rgba(30, 115, 184, 0.05);
+  --shadow-hover: 0 8px 24px rgba(30, 115, 184, 0.10);
+
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: var(--blue-main);
+  text-decoration: none;
+  transition: color 0.18s ease;
+}
+
+a:hover {
+  color: var(--blue-hover);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.section {
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+
+.section-tinted {
+  background-color: var(--bg-tint);
+  border-top: 1px solid var(--border-base);
+  border-bottom: 1px solid var(--border-base);
+}
+
+/* Типографика с комфортными отступами */
+.title-h1 {
+  font-size: 32px;
+  line-height: 1.25;
+  font-weight: 800;
+  color: var(--blue-hover);
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+}
+
+.title-h2 {
+  font-size: 24px;
+  line-height: 1.28;
+  font-weight: 800;
+  color: var(--blue-hover);
+  letter-spacing: -0.015em;
+  margin-bottom: 10px;
+}
+
+.title-h3 {
+  font-size: 18.5px;
+  line-height: 1.38;
+  font-weight: 700;
+  color: var(--blue-hover);
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 15.5px;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  max-width: 740px;
+}
+
+.text-body {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text-primary);
+}
+
+.text-meta {
+  font-size: 13.5px;
+  line-height: 1.5;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.salary-value {
+  font-size: 18px;
+  line-height: 1.3;
+  font-weight: 800;
+  color: var(--blue-main);
+}
+
+/* Кнопки, теги, поля ввода */
+.btn-primary, .btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 42px;
+  padding: 0 20px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: var(--blue-main);
+  color: var(--text-inverse);
+  border: 1px solid var(--blue-main);
+}
+
+.btn-primary:hover {
+  background-color: var(--blue-hover);
+  border-color: var(--blue-hover);
+  color: var(--text-inverse);
+}
+
+.btn-primary:active {
+  background-color: var(--blue-active);
+  border-color: var(--blue-active);
+}
+
+.btn-outline {
+  background-color: var(--bg-surface);
+  color: var(--blue-hover);
+  border: 1px solid var(--border-base);
+}
+
+.btn-outline:hover {
+  background-color: var(--bg-tint);
+  border-color: var(--sky-main);
+  color: var(--blue-main);
+}
+
+.btn-sm {
+  height: 36px;
+  padding: 0 14px;
+  font-size: 13px;
+  border-radius: var(--radius-xs);
+}
+
+.map-open-link {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 8px;
+  padding: 5px 11px;
+  border-radius: var(--radius-xs);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--sky-main);
+  color: var(--blue-main);
+  font-size: 12.5px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.16s ease;
+}
+
+.map-open-link:hover {
+  background-color: var(--blue-main);
+  border-color: var(--blue-main);
+  color: #ffffff;
+}
+
+.input-control, .select-control, .textarea-control {
+  height: 42px;
+  padding: 0 14px;
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  border: 1px solid var(--border-base);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+  width: 100%;
+}
+
+.textarea-control {
+  height: auto;
+  min-height: 96px;
+  padding: 12px 14px;
+  resize: vertical;
+}
+
+.input-control:focus, .input-control:hover,
+.select-control:focus, .select-control:hover,
+.textarea-control:focus, .textarea-control:hover {
+  border-color: var(--sky-main);
+  box-shadow: 0 0 0 3px rgba(143, 211, 232, 0.22);
+}
+
+.tag-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 26px;
+  padding: 0 10px;
+  background-color: var(--sky-soft);
+  color: var(--blue-hover);
+  border: 1px solid #bfe0f5;
+  border-radius: var(--radius-xs);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.badge-ggkit {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background-color: var(--blue-main);
+  color: #ffffff;
+  padding: 4px 10px;
+  border-radius: var(--radius-xs);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+/* Опциональное изображение от работодателя (показывается ТОЛЬКО если работодатель загрузил свой логотип/иконку) */
+.employer-custom-logo {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-sm);
+  object-fit: contain;
+  border: 1px solid var(--border-base);
+  background-color: #ffffff;
+  padding: 4px;
+  flex-shrink: 0;
+}
+
+/* Шапка сайта */
+.site-header {
+  background-color: var(--bg-surface);
+  border-bottom: 1px solid var(--border-base);
+  position: sticky;
+  top: 0;
+  z-index: 60;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 76px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.header-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: contain;
+  border: 1px solid var(--sky-main);
+  background-color: #ffffff;
+  padding: 2px;
+  flex-shrink: 0;
+}
+
+.header-brand-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--blue-hover);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.header-brand-sub {
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--bg-tint);
+  border: 1px solid var(--border-base);
+  padding: 5px;
+  border-radius: var(--radius-sm);
+  flex-wrap: wrap;
+}
+
+.header-nav-link {
+  padding: 8px 15px;
+  border-radius: var(--radius-xs);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.16s ease;
+  text-decoration: none;
+}
+
+.header-nav-link:hover {
+  color: var(--blue-hover);
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.header-nav-link.is-active {
+  background-color: var(--bg-surface);
+  color: var(--blue-main);
+  box-shadow: 0 1px 4px rgba(30, 115, 184, 0.10);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.expand-search {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  background-color: var(--bg-tint);
+  border: 1px solid var(--border-base);
+  border-radius: var(--radius-sm);
+  padding: 0 12px;
+  transition: all 0.22s ease;
+  width: 175px;
+}
+
+.expand-search.is-expanded, .expand-search:focus-within {
+  width: 250px;
+  background-color: var(--bg-surface);
+  border-color: var(--sky-main);
+  box-shadow: 0 0 0 3px rgba(143, 211, 232, 0.22);
+}
+
+.expand-search-btn {
+  background: none;
+  border: none;
+  color: var(--blue-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding-right: 8px;
+}
+
+.expand-search-input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  color: var(--text-primary);
+  width: 100%;
+}
+
+/* Главная страница */
+.hero-hub {
+  background-color: var(--bg-tint);
+  border: 1px solid var(--border-base);
+  border-radius: var(--radius-lg);
+  padding: 40px 32px;
+  text-align: center;
+}
+
+.hero-hub-search {
+  max-width: 760px;
+  margin: 24px auto 28px;
+  display: flex;
+  gap: 12px;
+  background-color: var(--bg-surface);
+  padding: 8px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--sky-main);
+  box-shadow: var(--shadow-card);
+  flex-wrap: wrap;
+}
+
+.hero-hub-search input {
+  flex: 1;
+  min-width: 220px;
+  border: none;
+  outline: none;
+  padding: 0 12px;
+  font-size: 15px;
+  color: var(--text-primary);
+}
+
+.promo-vacancies-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+  text-align: left;
+  flex-wrap: wrap;
+}
+
+.hero-promo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  text-align: left;
+}
+
+.promo-vacancy-slot {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-base);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+  cursor: pointer;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.promo-vacancy-slot:hover {
+  border-color: var(--sky-main);
+  box-shadow: var(--shadow-hover);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 0.95fr;
+  gap: 28px;
+  align-items: stretch;
+}
+
+.about-text-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-base);
+  border-radius: var(--radius-md);
+  padding: 30px;
+  box-shadow: var(--shadow-card);
+}
+
+.about-emblem-card {
+  background-color: var(--bg-tint);
+  border: 1px solid var(--sky-main);
+  border-radius: var(--radius-md);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.about-emblem-img {
+  width: 136px;
+  height: 136px;
+  border-radius: 50%;
+  object-fit: contain;
+  background-color: #ffffff;
+  border: 2px solid var(--sky-main);
+  padding: 6px;
+  margin-bottom: 16px;
+}
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.partner-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-base);
+  border-radius: var(--radius-md);
+  padding: 26px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 18px;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.partner-card:hover {
+  border-color: var(--sky-main);
+  box-shadow: var(--shadow-hover);
+}
+
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.interest-column-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-base);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  box-shadow: var(--shadow-card);
+}
+
+.interest-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.interest-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 16px;
+  background-color: var(--bg-tint);
+  border: 1px solid var(--border-base);
+  border-radius: var(--radius-sm);
+}
+
+.interest-bullet {
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  background-color: var(--blue-main);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.partner-apply-box {
+  background-color: var(--bg-tint);
+  border: 1px solid var(--sky-main);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.apply-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  background-color: var(--bg-surface);
+  padding: 24px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-base);
+}
+
+/* ==========================================================================
+   СТРАНИЦА ВАКАНСИЙ (vacancies.html) — Дышащие отступы ~0.5–0.7 см, без иконок по умолчанию
+   ========================================================================== */
+.big-contour-tabs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.big-contour-tab {
+  background-color: var(--bg-surface);
+  border: 2px solid var(--border-base);
+  border-radius: var(--radius-md);
+  padding: 22px 24px;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-sans);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  transition: all 0.18s ease;
+}
+
+.big-contour-tab:hover {
+  border-color: var(--sky-main);
+  background-color: var(--bg-tint);
+}
+
+.big-contour-tab.is-active {
+  border-color: var(--blue-main);
+  background-color: var(--sky-soft);
+  box-shadow: var(--shadow-card);
+}
+
+.big-contour-count {
+  background-color: var(--blue-main);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 800;
+  padding: 6px 14px;
+  border-radius: var(--radius-xs);
+  white-space: nowrap;
+}
+
+.catalog-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.view-mode-group {
+  display: inline-flex;
+  background-color: var(--bg-tint);
+  border: 1px solid var(--border-base);
+  padding: 4px;
+  border-radius: var(--radius-sm);
+  gap: 4px;
+}
+
+.view-mode-btn {
+  height: 36px;
+  padding: 0 14px;
+  border-radius: var(--radius-xs);
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.view-mode-btn.is-active {
+  background-color: var(--bg-surface);
+  color: var(--blue-main);
+  box-shadow: 0 1px 3px rgba(30, 115, 184, 0.10);
+}
+
+.filters-bar-card {
+  background-color: var(--bg-tint);
+  border: 1px solid var(--border-base);
+  border-radius: var(--radius-md);
+  padding: 22px;
+  margin-bottom: 28px;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr auto;
+  gap: 14px;
+  align-items: end;
+}
+
+/* Сетка карточек с просторным отступом 24px (~0.65 см) */
+.vacancies-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.vacancy-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-base);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 22px;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.vacancy-card:hover {
+  border-color: var(--sky-main);
+  box-shadow: var(--shadow-hover);
+}
+
+.vacancy-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* Просторная сетка условий 2x2 с отдельными ячейками-блоками и отступами 16px (~0.45 см) */
+.vacancy-conditions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  background-color: var(--bg-tint);
+  border: 1px solid var(--border-base);
+  border-radius: var(--radius-md);
+  padding: 18px;
+}
+
+.condition-cell {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-base);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.condition-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.condition-val {
+  font-size: 13.5px;
+  color: var(--text-primary);
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+/* Разделение рабочего контакта на отдельные абзацы (Телефон, Почта, Контактное лицо) */
+.contact-paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 2px;
+}
+
+.contact-paragraphs p {
+  font-size: 13px;
+  color: var(--text-primary);
+  line-height: 1.45;
+}
+
+.contact-paragraphs p span {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.vacancy-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-base);
+  flex-wrap: wrap;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-base);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  background-color: var(--bg-surface);
+}
+
+.data-table th {
+  background-color: var(--bg-tint);
+  color: var(--blue-hover);
+  font-weight: 700;
+  font-size: 13px;
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--border-base);
+  white-space: nowrap;
+}
+
+.data-table td {
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--border-base);
+  font-size: 14px;
+  color: var(--text-primary);
+  vertical-align: top;
+}
+
+.data-table tbody tr:nth-child(even) { background-color: #fafdff; }
+.data-table tbody tr:last-child td { border-bottom: none; }
+.data-table tbody tr:hover { background-color: var(--bg-tint); }
+
+/* ==========================================================================
+   ОТДЕЛЬНАЯ СТРАНИЦА ВАКАНСИИ (vacancy-details.html — 23B + 24A)
+   ========================================================================== */
+.detail-centered-doc {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.detail-doc-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-base);
+  border-radius: var(--radius-md);
+  padding: 34px;
+  box-shadow: var(--shadow-card);
+  margin-bottom: 28px;
+}
+
+.detail-address-contact-bar {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  background-color: var(--sky-soft);
+  border: 1px solid var(--sky-main);
+  border-radius: var(--radius-md);
+  padding: 22px;
+  margin-top: 22px;
+}
+
+.detail-address-box, .detail-contact-box {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-base);
+  border-radius: var(--radius-sm);
+  padding: 16px 18px;
+}
+
+.detail-block {
+  margin-top: 26px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-base);
+}
+
+.detail-bullet-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.detail-bullet-list li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 15px;
+  color: var(--text-primary);
+}
+
+.detail-bullet-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--blue-main);
+}
+
+.detail-bottom-apply-card {
+  background-color: var(--bg-tint);
+  border: 1px solid var(--sky-main);
+  border-radius: var(--radius-md);
+  padding: 30px;
+  box-shadow: var(--shadow-card);
+}
+
+/* Личный кабинет (25A + 26D + 27C) */
+.cabinet-top-tabs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--bg-tint);
+  border: 1px solid var(--border-base);
+  padding: 6px;
+  border-radius: var(--radius-md);
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.cabinet-top-tab-btn {
+  height: 38px;
+  padding: 0 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.16s ease;
+}
+
+.cabinet-top-tab-btn:hover {
+  color: var(--blue-hover);
+}
+
+.cabinet-top-tab-btn.is-active {
+  background-color: var(--blue-main);
+  color: #ffffff;
+  border-color: var(--blue-main);
+}
+
+.cabinet-panel-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-base);
+  border-radius: var(--radius-md);
+  padding: 30px;
+  box-shadow: var(--shadow-card);
+}
+
+.verify-box {
+  background-color: var(--bg-tint);
+  border: 1px solid var(--sky-main);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  margin-top: 18px;
+}
+
+.verify-result-banner {
+  margin-top: 16px;
+  padding: 14px 18px;
+  border-radius: var(--radius-sm);
+  font-size: 13.5px;
+  font-weight: 600;
+  display: none;
+}
+
+.verify-result-banner.is-ok {
+  display: block;
+  background-color: var(--ok-bg);
+  border: 1px solid var(--ok-border);
+  color: var(--ok-text);
+}
+
+.verify-result-banner.is-fail {
+  display: block;
+  background-color: var(--warn-bg);
+  border: 1px solid var(--warn-border);
+  color: var(--warn-text);
+}
+
+.city-pills-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.site-footer {
+  margin-top: auto;
+  background-color: var(--blue-hover);
+  color: #ffffff;
+  border-top: 4px solid var(--sky-main);
+  padding: 34px 0;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.toast-notification {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  background-color: var(--blue-hover);
+  color: #ffffff;
+  border: 1px solid var(--sky-main);
+  border-radius: var(--radius-sm);
+  padding: 12px 18px;
+  font-size: 13.5px;
+  font-weight: 600;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: all 0.18s ease;
+  z-index: 120;
+}
+
+.toast-notification.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 980px) {
+  .hero-promo-grid,
+  .vacancies-cards-grid,
+  .big-contour-tabs,
+  .about-grid,
+  .partners-grid,
+  .interests-grid,
+  .partner-apply-box {
+    grid-template-columns: 1fr;
+  }
+  .filters-bar-card {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 680px) {
+  .container {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+  .section {
+    padding-top: 34px;
+    padding-bottom: 34px;
+  }
+  .title-h1 {
+    font-size: 25px;
+  }
+  .title-h2 {
+    font-size: 20px;
+  }
+  .header-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .header-nav {
+    justify-content: center;
+  }
+  .header-actions {
+    justify-content: space-between;
+  }
+  .expand-search, .expand-search.is-expanded, .expand-search:focus-within {
+    width: 100%;
+    flex: 1;
+  }
+  .filters-bar-card,
+  .apply-form-grid,
+  .detail-address-contact-bar,
+  .vacancy-conditions-grid {
+    grid-template-columns: 1fr;
+  }
+  .vacancy-card,
+  .detail-doc-card,
+  .detail-bottom-apply-card,
+  .cabinet-panel-card {
+    padding: 20px;
+  }
+}
