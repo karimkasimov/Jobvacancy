@@ -1,0 +1,20 @@
+{
+  "name": "ggkit-career-chr",
+  "version": "1.0.0",
+  "description": "ГГКИТ Карьера ЧР — кадровый портал колледжа и партнёров Чеченской Республики",
+  "private": true,
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning server/index.js",
+    "dev": "node --disable-warning=ExperimentalWarning --watch server/index.js",
+    "migrate": "node --disable-warning=ExperimentalWarning server/migrate.js",
+    "seed": "node --disable-warning=ExperimentalWarning server/seed.js",
+    "create-admin": "node --disable-warning=ExperimentalWarning server/create-admin.js",
+    "check": "node scripts/check-syntax.js",
+    "test": "node --disable-warning=ExperimentalWarning --test \"tests/**/*.test.js\"",
+    "test:e2e": "node --disable-warning=ExperimentalWarning tests/e2e/smoke.e2e.js"
+  }
+}
